@@ -5,14 +5,16 @@ lapply(libs, require, character.only = T)
 
 rm(libs)
 
-# # load data
+## huge file, only run when initializing ###
+
+# # extract data
 # permits_raw <- as.data.frame(read.socrata("https://data.austintexas.gov/resource/3syk-w9eu.json"))
 # 
 # # save data
-# write_csv(permits_raw, "data/permits_raw.csv")
+# write_csv(permits_raw, "data/extracted_files/permits_raw.csv")
 
-# load data 2
-permits_raw <- read_csv("data/permits_raw.csv")
+# load data
+permits_raw <- read_csv("data/extracted_files/permits_raw.csv")
 
 # look at residential class
 res_class <- permits_raw |> 
